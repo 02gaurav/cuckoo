@@ -563,7 +563,9 @@ class AnalysisManager(threading.Thread):
                 try:
                     dump_path = os.path.join(self.storage, "memory.dmp")
                     machinery.dump_memory(self.machine.label, dump_path)
-
+                    time.sleep(20)
+                    dump_path1 = os.path.join(self.storage,"memory1.dmp")
+                    machinery.dump_memory(self.machine.label, dump_path1)
                     logger(
                         "Taken full memory dump",
                         action="vm.memdump", status="success",
